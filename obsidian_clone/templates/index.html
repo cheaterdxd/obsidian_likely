@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obsidian Clone</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <!-- Marked for Markdown rendering -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Vis-Network for Graph View -->
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h3>Files</h3>
+                <button id="new-file-btn">+</button>
+            </div>
+            <ul id="file-list"></ul>
+        </div>
+
+        <div class="main-content">
+            <div class="toolbar">
+                <span id="current-file-name">No file selected</span>
+                <div class="tabs">
+                    <button class="tab-btn active" onclick="switchTab('editor')">Editor</button>
+                    <button class="tab-btn" onclick="switchTab('preview')">Preview</button>
+                    <button class="tab-btn" onclick="switchTab('graph')">Graph</button>
+                </div>
+                <button id="save-btn">Save</button>
+            </div>
+
+            <div id="editor-view" class="view active">
+                <textarea id="markdown-editor" placeholder="Start typing..."></textarea>
+            </div>
+
+            <div id="preview-view" class="view">
+                <div id="markdown-preview"></div>
+            </div>
+
+            <div id="graph-view" class="view">
+                <div id="network"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
